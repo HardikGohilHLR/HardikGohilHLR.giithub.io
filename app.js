@@ -14,13 +14,15 @@ temp_value.addEventListener('input',function(e){
 	document.querySelector("#fehrenhit-card").style.display = 'block';
 	document.querySelector("#kelvin-card").style.display = 'block';
 	document.querySelector("#rankine-card").style.display = 'block';
-
+	if(temp === null || temp === ''){
+		temp = 0;
+	}
 	fehrenhit_value.textContent = (temp * 9/5) + 32;
+	
 	let kelvin = parseInt(temp) + 273.15;
+	
 	kelvin_value.textContent = kelvin;	
+
 	let rankine = temp * 9/5 + 491.67;
 	rankine_value.textContent = rankine.toFixed(2);	
-
-
-
 });
